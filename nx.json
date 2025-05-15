@@ -1,0 +1,32 @@
+{
+  "installation": {
+    "version": "20.8.1",
+    "plugins": {
+      "@nx/gradle": "21.0.0-beta.8"
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/gradle",
+      "options": {
+        "testTargetName": "test",
+        "classesTargetName": "classes",
+        "buildTargetName": "build"
+      }
+    }
+  ],
+  "targetDefaults": {
+    "bootJar": {
+      "continuous": true
+    }
+  },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/src/test/**/*"
+    ]
+  }
+}

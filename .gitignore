@@ -36,3 +36,7 @@ out/
 ### VS Code ###
 .vscode/
 /org.gradle.api.internal*
+
+.nx/installation
+.nx/cache
+.nx/workspace-data

@@ -1,6 +1,7 @@
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
+    id("dev.nx.gradle.project-graph") version ("0.0.2")
     java
     alias(libs.plugins.spotless)
     alias(libs.plugins.spring.boot) apply false
@@ -95,5 +96,11 @@ subprojects {
 
     tasks.getByName<Jar>("jar") {
         enabled = true
+    }
+}
+
+allprojects {
+    apply {
+        plugin("dev.nx.gradle.project-graph")
     }
 }
